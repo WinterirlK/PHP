@@ -1,0 +1,4 @@
+-- select zespol1, zespol2, wynik, data_rozgrywki from rozgrywka where zespol1 = "EVG"
+-- select imie, nazwisko from zawodnik where pozycja_id = "3"
+-- select zawodnik.id, nazwisko, nazwa from zawodnik INNER JOIN pozycja on zawodnik.pozycja_id = pozycja.id where pozycja_id ="1" or "2" or "3"
+-- DROP TABLE liga

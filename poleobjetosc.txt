@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        a: <input type="number" name="liczba1"><br>
+        b: <input type="number" name="liczba2"><br>
+        c: <input type="number" name="liczba3"><br>
+
+        <select name="select" id="select">
+            <option value="POLE">Pole</option>
+            <option value="OBWÓD">Obwód</option>
+            <option value="OBJĘTOŚĆ">Objętość</option>
+            <option value="PRZEKĄTNA">Przekątna</option>
+        </select>
+
+        <input type="submit" name="submit" value="Calculate">
+    </form>
+
+    <?php 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $a = $_POST['liczba1'];
+        $b = $_POST['liczba2'];
+        $c = $_POST['liczba3'];
+
+        $obw = 4 * $a + 4 * $b + 4 * $c;
+        $objetosc = $a * $b * $c; // Corrected volume calculation equation
+
+        if (isset($_POST['submit'])) {
+            $selectedOption = $_POST['select'];
+
+            switch ($selectedOption) {
+                case 'POLE':
+                    $pole = (2 * $a * $b) + (2 * $a * $c) + (2 * $b * $c);
+                    echo "Pole: " . $pole;
+                    break;
+                case 'OBWÓD':
+                    echo "Obwód: " . $obw;
+                    break;
+                case 'OBJĘTOŚĆ':
+                    echo "Objętość: " . $objetosc;
+                    break;
+
+                case 'PRZEKĄTNA':
+                    $diagonal = sqrt(pow($a,2) + pow($b,2) + pow($c,2));
+                    echo "przekątna: ". $diagonal;
+                    break;
+                default:
+                    echo "Select a calculation type.";
+            }
+        }
+    }
+    ?>
+</body>
+</html>     
