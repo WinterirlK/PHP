@@ -1,0 +1,42 @@
+*{
+    font-family: Verdana;
+}
+.baner1, .baner2{
+    background-color: #6F79A8;
+    color: white;
+    height: 140px;
+}
+.baner1 {
+    width: 30%;
+    float: left;
+}
+.baner2{
+    width: 70%;
+    float: left;
+}
+.kalendarz{
+    width: 160px;
+    height: 85px;
+    margin: 5px;
+    border: 1px solid #6F79A8;
+    background-color: #9fa8da;
+    /* color: #9fa8da; */
+    overflow: hidden;
+    float: left;
+}
+.kalendarz:hover{
+    background-color: #6F79A8;
+    color: white;
+}
+h6{
+    text-align: center;
+}
+.main{
+    float: left;
+}
+.futer{
+    float: left;
+    width: 100%;
+    text-align: right;
+    background-color: #6F79A8;
+}
